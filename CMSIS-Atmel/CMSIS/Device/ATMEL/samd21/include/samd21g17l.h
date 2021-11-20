@@ -14,9 +14,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License"); you may
  * not use this file except in compliance with the License.
  * You may obtain a copy of the Licence at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -220,6 +220,11 @@ void DAC_Handler                 ( void );
 void AC1_Handler                 ( void );
 void TCC3_Handler                ( void );
 
+/* Defines for Deprecated Interrupt and Exceptions handler names */
+#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility*/
+#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility*/
+#define NMI_Handler               NonMaskableInt_Handler          /**< \deprecated  Backward compatibility*/
+#define SVC_Handler               SVCall_Handler                  /**< \deprecated  Backward compatibility*/
 /*
  * \brief Configuration of the Cortex-M0+ Processor and Core Peripherals
  */
@@ -229,6 +234,9 @@ void TCC3_Handler                ( void );
 #define __NVIC_PRIO_BITS       2         /*!< Number of bits used for Priority Levels */
 #define __VTOR_PRESENT         1         /*!< VTOR present or not */
 #define __Vendor_SysTickConfig 0         /*!< Set to 1 if different SysTick Config is used */
+#define __ARCH_ARM                     1
+#define __ARCH_ARM_CORTEX_M            1
+#define __DEVICE_IS_SAM                1
 
 /**
  * \brief CMSIS includes
@@ -260,6 +268,7 @@ void TCC3_Handler                ( void );
 #include "component/nvmctrl.h"
 #include "component/pac.h"
 #include "component/pm.h"
+#include "component/ptc.h"
 #include "component/port.h"
 #include "component/rtc.h"
 #include "component/sercom.h"
@@ -356,6 +365,7 @@ void TCC3_Handler                ( void );
 #define ID_ADC           80 /**< \brief Analog Digital Converter (ADC) */
 #define ID_AC            81 /**< \brief Analog Comparators  (AC) */
 #define ID_DAC           82 /**< \brief Digital Analog Converter (DAC) */
+#define ID_PTC           83 /**< \brief Peripheral Touch Controller (PTC) */
 #define ID_AC1           85 /**< \brief Analog Comparators 1 (AC1) */
 #define ID_TCC3          88 /**< \brief Timer Counter Control 3 (TCC3) */
 

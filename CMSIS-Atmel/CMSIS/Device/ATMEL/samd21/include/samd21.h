@@ -44,6 +44,7 @@
 #ifndef _SAMD21_
 #define _SAMD21_
 
+
 /**
  * \defgroup SAMD21_definitions SAMD21 Device Definitions
  * \brief SAMD21 CMSIS Definitions.
@@ -65,6 +66,10 @@
   #include "samd21g17a.h"
 #elif defined(__SAMD21G17AU__) || defined(__ATSAMD21G17AU__)
   #include "samd21g17au.h"
+#elif defined(__SAMD21G17D__) || defined(__ATSAMD21G17D__)
+  #include "samd21g17d.h"
+#elif defined(__SAMD21G17L__) || defined(__ATSAMD21G17L__)
+  #include "samd21g17l.h"
 #elif defined(__SAMD21G18A__) || defined(__ATSAMD21G18A__)
   #include "samd21g18a.h"
 #elif defined(__SAMD21G18AU__) || defined(__ATSAMD21G18AU__)

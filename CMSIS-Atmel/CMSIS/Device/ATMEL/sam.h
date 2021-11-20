@@ -107,6 +107,12 @@
 #define SAMD21G17A ( \
     part_is_defined( SAMD21G17AU ) )
 
+#define SAMD21G17D ( \
+    part_is_defined( SAMD21G17D ) )
+
+#define SAMD21G17L ( \
+    part_is_defined( SAMD21G17L ) )
+
 #define SAMD21E15B ( \
     part_is_defined( SAMD21E15BU ) )
 
@@ -143,6 +149,7 @@
 
 #define SAMD21G17 ( \
     part_is_defined( SAMD21G17A ) )
+    part_is_defined( SAMD21G17D ) )
 
 #define SAMD21G18A ( \
     part_is_defined( SAMD21G18AU ) )
@@ -156,7 +163,7 @@
 
 #define SAMD21J18 ( \
     part_is_defined( SAMD21J18A ) )
-	
+
 #define SAMD51G18A ( \
     part_is_defined( SAMD51G18A ) )
 
@@ -181,9 +188,10 @@
 #define SAMD51P20A ( \
     part_is_defined( SAMD51P20A ) )
 
-	
+
 /* Entire SAMD21 series */
-#define SAMD21_SERIES (SAMD21J17 || SAMD21G17A || SAMD21E15B || SAMD21E15 || SAMD21E16 || SAMD21E17 || SAMD21E18 || SAMD21E16B || SAMD21J15 || SAMD21J16 || SAMD21G16 || SAMD21G17 || SAMD21G18A || SAMD21G15 || SAMD21G18 || SAMD21J18)
+#define SAMD21_SERIES (SAMD21J17 || SAMD21G17A || SAMD21G1D || SAMD21G17L || SAMD21E15B || SAMD21E15 || SAMD21E16 || SAMD21E17 || SAMD21E18 || SAMD21E16B || SAMD21J15 || SAMD21J16 || SAMD21G16 || SAMD21G17 || SAMD21G18A || SAMD21G15 || SAMD21G18 || SAMD21J18)
+#define SAMD21  SAMD21_SERIES
 
 /* Entire SAMD51 series */
 #define SAMD51_SERIES (SAMD51G18A || SAMD51G19A || SAMD51J19A || SAMD51J20A || SAMD51N19A || SAMD51N20A || SAMD51P19A || SAMD51P20A)

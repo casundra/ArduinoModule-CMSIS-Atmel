@@ -14,9 +14,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License"); you may
  * not use this file except in compliance with the License.
  * You may obtain a copy of the Licence at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -183,6 +183,13 @@ typedef struct _DeviceVectors
   void* pfnTCC3_Handler;                  /* 29 Timer Counter Control 3 */
 } DeviceVectors;
 
+/* Defines for Deprecated Interrupt and Exceptions handler names */
+// added from include_mcc file in Atmel update pack
+#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF*/
+#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF*/
+#define pfnNMI_Handler            pfnNonMaskableInt_Handler       /**< \deprecated  Backward compatibility for ASF*/
+#define pfnSVC_Handler            pfnSVCall_Handler               /**< \deprecated  Backward compatibility for ASF*/
+
 /* Cortex-M0+ processor handlers */
 void Reset_Handler               ( void );
 void NonMaskableInt_Handler      ( void );
@@ -220,6 +227,12 @@ void PTC_Handler                 ( void );
 void I2S_Handler                 ( void );
 void TCC3_Handler                ( void );
 
+/* Defines for Deprecated Interrupt and Exceptions handler names */
+#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility*/
+#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility*/
+#define NMI_Handler               NonMaskableInt_Handler          /**< \deprecated  Backward compatibility*/
+#define SVC_Handler               SVCall_Handler                  /**< \deprecated  Backward compatibility*/
+
 /*
  * \brief Configuration of the Cortex-M0+ Processor and Core Peripherals
  */
@@ -229,6 +242,9 @@ void TCC3_Handler                ( void );
 #define __NVIC_PRIO_BITS       2         /*!< Number of bits used for Priority Levels */
 #define __VTOR_PRESENT         1         /*!< VTOR present or not */
 #define __Vendor_SysTickConfig 0         /*!< Set to 1 if different SysTick Config is used */
+#define __ARCH_ARM                     1
+#define __ARCH_ARM_CORTEX_M            1
+#define __DEVICE_IS_SAM                1
 
 /**
  * \brief CMSIS includes
@@ -262,6 +278,7 @@ void TCC3_Handler                ( void );
 #include "component/pac.h"
 #include "component/pm.h"
 #include "component/port.h"
+#include "component/ptc.h"
 #include "component/rtc.h"
 #include "component/sercom.h"
 #include "component/sysctrl.h"

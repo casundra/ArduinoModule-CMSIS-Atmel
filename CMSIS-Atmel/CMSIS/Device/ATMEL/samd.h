@@ -101,6 +101,10 @@
 #include "samd21/include/samd21.h"
 #elif defined (__SAMD21G17AU__)
 #include "samd21/include/samd21.h"
+#elif defined (__SAMD21G17D__)
+#include "samd21/include/samd21.h"
+#elif defined (__SAMD21G17L__)
+#include "samd21/include/samd21.h"
 #elif defined (__SAMD21G18A__)
 #include "samd21/include/samd21.h"
 #elif defined (__SAMD21G18AU__)
