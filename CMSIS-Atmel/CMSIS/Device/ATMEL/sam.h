@@ -148,8 +148,9 @@
     part_is_defined( SAMD21G16B ) )
 
 #define SAMD21G17 ( \
-    part_is_defined( SAMD21G17A ) )
-    part_is_defined( SAMD21G17D ) )
+    part_is_defined( SAMD21G17A ) || \
+    part_is_defined( SAMD21G17D ) || \
+    part_is_defined( SAMD21G17L ) )
 
 #define SAMD21G18A ( \
     part_is_defined( SAMD21G18AU ) )
